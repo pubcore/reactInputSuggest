@@ -1,0 +1,5 @@
+# reactInputSuggest
+
+## usage
+
+	<InputAutocomplete {...inputProps} />

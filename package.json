@@ -1,0 +1,62 @@
+{
+  "name": "reactInputSuggest",
+  "version": "1.0.0",
+  "description": "text input field with selectable suggestions for react",
+  "scripts": {
+    "test": "mocha --compilers js:babel-register --require ./test/.helpers.js --require ./test/.dom.js --recursive",
+    "build": "babel src --out-dir js --ignore spec.js",
+    "pack": "npm run build && webpack --optimize-minimize",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pubcore/reactInputSuggest.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pubcore/reactInputSuggest/issues"
+  },
+  "homepage": "https://github.com/pubcore/reactInputSuggest#readme",
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "pubcore-ui-text": "^1.0.7",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-onclickoutside": "^6.6.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.0.2",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-15": "^1.0.1",
+    "enzyme-adapter-utils": "^1.0.1",
+    "eslint": "^4.8.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^5.2.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "fakexmlhttprequest": "0.0.1",
+    "jsdom": "^11.3.0",
+    "mocha": "^3.4.2",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.0.0",
+    "webpack": "^3.0.0"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  }
+}

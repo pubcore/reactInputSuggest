@@ -2,9 +2,11 @@
   "name": "pubcore-react-input-suggest",
   "version": "1.0.0",
   "description": "text input field with selectable suggestions for react",
+  "main": "js/InputSuggest.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register --require ./test/.helpers.js --require ./test/.dom.js --recursive",
     "build": "babel src --out-dir js --ignore spec.js",
+    "watch": "watch \"npm run build\" ./src",
     "pack": "npm run build && webpack --optimize-minimize",
     "prepublish": "npm run build"
   },
@@ -48,6 +50,7 @@
     "mocha": "^3.4.2",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.0.0",
+    "watch": "^1.0.2",
     "webpack": "^3.0.0"
   },
   "babel": {

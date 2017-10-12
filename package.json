@@ -1,5 +1,5 @@
 {
-  "name": "reactInputSuggest",
+  "name": "pubcore-react-input-suggest",
   "version": "1.0.0",
   "description": "text input field with selectable suggestions for react",
   "scripts": {

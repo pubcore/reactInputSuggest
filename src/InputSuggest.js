@@ -52,15 +52,15 @@ class InputSuggest extends React.Component {
 	}
 	onKeyPress(e) {
 		switch(e.key) {
-			case 'Enter': return this.setValue(this.state.selected, false)
-			case 'ArrowDown': return this.selectNextSuggestion(e)
-			case 'ArrowUp': return this.selectPreviousSuggestion(e)
+		case 'Enter': return this.setValue(this.state.selected, false)
+		case 'ArrowDown': return this.selectNextSuggestion(e)
+		case 'ArrowUp': return this.selectPreviousSuggestion(e)
 		}
 		this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(this.state.value, e)
 	}
 	render() {
 		const {T, gofer, className, classNames, inputProps, minsize} = this.props,
-					{suggestions, selected} = this.state
+			{suggestions, selected} = this.state
 
 		return <div className={(classNames.container)+(className||'')} onKeyDown={this.onKeyPress}>
 			<input
@@ -71,28 +71,28 @@ class InputSuggest extends React.Component {
 				onFocus={this.onFocus}
 				onBlur={this.hideDropdown}
 			/>
-		{Array.isArray(suggestions) && suggestions.length && !(suggestions.length === 1 && suggestions[0] === this.state.value)  ?
-			<div className={classNames.dropdown + (this.state.dropdown ? ' ' + classNames.dropdownOpen : '')} >
-				{suggestions.map((val, i) =>
-				<div
-					key={i}
-					className={classNames.dropdownValue + (selected === val ? ' ' + classNames.dropdownValueSelected : '')}
-					onClick={() => this.setValue(val)}
-					onMouseOver={e => this.selectSuggestion(val,e)}
-				>
-					{val}
-				</div>
-				)}
-				{gofer.showMore && <div
+			{Array.isArray(suggestions) && suggestions.length && !(suggestions.length === 1 && suggestions[0] === this.state.value)  ?
+				<div className={classNames.dropdown + (this.state.dropdown ? ' ' + classNames.dropdownOpen : '')} >
+					{suggestions.map((val, i) =>
+						<div
+							key={i}
+							className={classNames.dropdownValue + (selected === val ? ' ' + classNames.dropdownValueSelected : '')}
+							onClick={() => this.setValue(val)}
+							onMouseOver={e => this.selectSuggestion(val,e)}
+						>
+							{val}
+						</div>
+					)}
+					{gofer.showMore && <div
 						className={classNames.dropdownMore}
 						onClick={() => gofer.showMore(minsize)}
 					>
 						{uiText(T, 'inputSuggestShowMore', '... show {count} more', {count:minsize})}
 					</div>
-				}
+					}
 
-			</div>
-			: null
+				</div>
+				: null
 			}
 		</div>
 	}

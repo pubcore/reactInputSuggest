@@ -3,14 +3,17 @@ module.exports = {
         "browser": true,
         "es6": true,
         "node": true,
-        "mocha": true,
-				"react": true
+        "mocha": true
     },
+    "plugins": [
+        "react"
+    ],
     "extends": "eslint:recommended",
     "parserOptions": {
         "sourceType": "module",
         "ecmaFeatures":{
-            "experimentalObjectRestSpread":true
+            "experimentalObjectRestSpread":true,
+            "jsx": true
         }
     },
     "rules": {

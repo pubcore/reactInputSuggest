@@ -60,6 +60,11 @@ var InputSuggest = function (_React$Component) {
 	}
 
 	_createClass(InputSuggest, [{
+		key: 'componentWillReceiveProps',
+		value: function componentWillReceiveProps(props) {
+			this.setState({ suggestions: props.suggestions });
+		}
+	}, {
 		key: 'handleClickOutside',
 		value: function handleClickOutside(e) {
 			this.setState({ dropdown: false });
@@ -146,6 +151,7 @@ var InputSuggest = function (_React$Component) {
 					onFocus: this.onFocus,
 					onBlur: this.hideDropdown
 				})),
+				this.props.loading && this.props.loading(),
 				Array.isArray(suggestions) && suggestions.length && !(suggestions.length === 1 && suggestions[0] === this.state.value) ? _react2.default.createElement(
 					'div',
 					{ className: classNames.dropdown + (this.state.dropdown ? ' ' + classNames.dropdownOpen : '') },

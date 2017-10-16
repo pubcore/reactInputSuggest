@@ -19,6 +19,9 @@ class InputSuggest extends React.Component {
 		this.selectSuggestion = this.selectSuggestion.bind(this)
 		this.onKeyPress = this.onKeyPress.bind(this)
 	}
+	componentWillReceiveProps(props) {
+		this.setState({suggestions: props.suggestions})
+	}
 	handleClickOutside(e) {
 		this.setState({dropdown: false})
 		this.props.gofer.close && this.props.gofer.close(e.target.value, e)
@@ -71,6 +74,7 @@ class InputSuggest extends React.Component {
 				onFocus={this.onFocus}
 				onBlur={this.hideDropdown}
 			/>
+			{this.props.loading && this.props.loading()}
 			{Array.isArray(suggestions) && suggestions.length && !(suggestions.length === 1 && suggestions[0] === this.state.value)  ?
 				<div className={classNames.dropdown + (this.state.dropdown ? ' ' + classNames.dropdownOpen : '')} >
 					{suggestions.map((val, i) =>

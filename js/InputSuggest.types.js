@@ -13,5 +13,6 @@ exports.default = {
 	gofer: _react.PropTypes.object.isRequired,
 	classNames: _react.PropTypes.object.isRequired,
 	minsize: _react.PropTypes.number.isRequired,
+	loading: _react.PropTypes.func,
 	T: _react.PropTypes.oneOfType([_react.PropTypes.object, _react.PropTypes.array]).isRequired
 };

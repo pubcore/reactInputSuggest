@@ -7,5 +7,6 @@ export default {
 	gofer:PT.object.isRequired,
 	classNames:PT.object.isRequired,
 	minsize: PT.number.isRequired,
+	loading: PT.func,
 	T:PT.oneOfType([PT.object,PT.array]).isRequired
 }

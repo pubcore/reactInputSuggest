@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/pubcore/reactInputSuggest.svg?branch=master)](https://travis-ci.org/pubcore/reactInputSuggest)
 # reactInputSuggest
 
 ## install

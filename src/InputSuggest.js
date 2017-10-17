@@ -54,12 +54,14 @@ class InputSuggest extends React.Component {
 		this.state.dropdown && this.selectSuggestion(this.state.suggestions[key] || '' ,e)
 	}
 	onKeyPress(e) {
+		this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(this.state.value, e)
 		switch(e.key) {
-		case 'Enter': return this.setValue(this.state.selected, false)
+		case 'Enter':
+			this.state.dropdown && e.preventDefault()
+			return this.setValue(this.state.selected, false)
 		case 'ArrowDown': return this.selectNextSuggestion(e)
 		case 'ArrowUp': return this.selectPreviousSuggestion(e)
 		}
-		this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(this.state.value, e)
 	}
 	render() {
 		const {T, gofer, className, classNames, inputProps, minsize} = this.props,

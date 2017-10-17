@@ -77,12 +77,12 @@ var InputSuggest = function (_React$Component) {
 				return val.toLowerCase().indexOf(newValue.toLowerCase()) >= 0;
 			});
 			this.setState({ value: newValue, dropdown: dropdown, suggestions: suggestions });
+			this.props.gofer.change && this.props.gofer.change(newValue);
 		}
 	}, {
 		key: 'onInput',
 		value: function onInput(e) {
 			this.setValue(e.target.value, true);
-			this.props.gofer.change && this.props.gofer.change(e.target.value, e);
 		}
 	}, {
 		key: 'onFocus',

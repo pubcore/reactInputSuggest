@@ -29,10 +29,10 @@ class InputSuggest extends React.Component {
 	setValue(newValue, dropdown) {
 		var suggestions = this.props.suggestions.filter(val => val.toLowerCase().indexOf(newValue.toLowerCase())>=0)
 		this.setState({value: newValue, dropdown, suggestions})
+		this.props.gofer.change && this.props.gofer.change(newValue)
 	}
 	onInput(e) {
 		this.setValue(e.target.value, true)
-		this.props.gofer.change && this.props.gofer.change(e.target.value, e)
 	}
 	onFocus(e) {
 		this.setState({dropdown: true})

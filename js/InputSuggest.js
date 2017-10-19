@@ -168,10 +168,10 @@ var InputSuggest = function (_React$Component) {
 								key: i,
 								className: classNames.dropdownValue + (selected === val ? ' ' + classNames.dropdownValueSelected : ''),
 								onClick: function onClick() {
-									return _this2.setValue(val);
+									return _this2.selectSuggestion(val);
 								},
 								onMouseOver: function onMouseOver(e) {
-									return _this2.selectSuggestion(val, e);
+									return _this2.useSuggestion(val, e);
 								}
 							},
 							val

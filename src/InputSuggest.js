@@ -86,8 +86,8 @@ class InputSuggest extends React.Component {
 						<div
 							key={i}
 							className={classNames.dropdownValue + (selected === val ? ' ' + classNames.dropdownValueSelected : '')}
-							onClick={() => this.setValue(val)}
-							onMouseOver={e => this.selectSuggestion(val,e)}
+							onClick={() => this.selectSuggestion(val)}
+							onMouseOver={e => this.useSuggestion(val,e)}
 						>
 							{val}
 						</div>

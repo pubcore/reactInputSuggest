@@ -44,7 +44,7 @@ class InputSuggest extends React.Component {
 		this.setState({selected: newValue})
 	}
 	selectSuggestion(newValue, e) {
-		this.useSuggestion(newValue)
+		this.setValue(newValue)
 		this.props.gofer.selectSuggestion && this.props.gofer.selectSuggestion(newValue, e)
 	}
 	selectNextSuggestion() {

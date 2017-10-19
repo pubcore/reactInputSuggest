@@ -35,7 +35,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /* eslint-disable no-unused-vars */
+
+/* eslint-enable no-unused-vars */
+
 
 var InputSuggest = function (_React$Component) {
 	_inherits(InputSuggest, _React$Component);
@@ -98,7 +101,7 @@ var InputSuggest = function (_React$Component) {
 	}, {
 		key: 'selectSuggestion',
 		value: function selectSuggestion(newValue, e) {
-			this.useSuggestion(newValue);
+			this.setValue(newValue);
 			this.props.gofer.selectSuggestion && this.props.gofer.selectSuggestion(newValue, e);
 		}
 	}, {

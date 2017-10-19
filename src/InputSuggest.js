@@ -71,7 +71,7 @@ class InputSuggest extends React.Component {
 			this.selectPreviousSuggestion(e)
 			break
 		}
-		this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(this.state.value, e)
+		this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(this.state.selected, e)
 	}
 	render() {
 		const {T, gofer, className, classNames, inputProps, minsize} = this.props,

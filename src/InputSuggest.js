@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
+/* eslint-enable no-unused-vars */
 import uiText from 'pubcore-ui-text'
 import onClickOutside from 'react-onclickoutside'
 import PropTypes from './InputSuggest.types'

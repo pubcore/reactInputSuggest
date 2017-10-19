@@ -23,7 +23,7 @@ class InputSuggest extends React.Component {
 	}
 	componentWillReceiveProps(props) {
 		var newState = {suggestions: props.suggestions}
-		if(props.value) {
+		if(typeof(props.value)=='string') {
 			newState['value'] = props.value
 		}
 		this.setState(newState)

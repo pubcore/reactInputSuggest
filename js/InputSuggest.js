@@ -66,7 +66,7 @@ var InputSuggest = function (_React$Component) {
 		key: 'componentWillReceiveProps',
 		value: function componentWillReceiveProps(props) {
 			var newState = { suggestions: props.suggestions };
-			if (props.value) {
+			if (typeof props.value == 'string') {
 				newState['value'] = props.value;
 			}
 			this.setState(newState);

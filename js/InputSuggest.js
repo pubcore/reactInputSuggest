@@ -65,7 +65,11 @@ var InputSuggest = function (_React$Component) {
 	_createClass(InputSuggest, [{
 		key: 'componentWillReceiveProps',
 		value: function componentWillReceiveProps(props) {
-			this.setState({ suggestions: props.suggestions, value: props.value });
+			var newState = { suggestions: props.suggestions };
+			if (props.value) {
+				newState['value'] = props.value;
+			}
+			this.setState(newState);
 		}
 	}, {
 		key: 'handleClickOutside',

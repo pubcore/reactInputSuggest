@@ -157,8 +157,7 @@ var InputSuggest = function (_React$Component) {
 					type: 'text',
 					value: this.state.value,
 					onChange: this.onInput,
-					onFocus: this.onFocus,
-					onBlur: this.hideDropdown
+					onFocus: this.onFocus
 				})),
 				this.props.loading && this.props.loading(),
 				Array.isArray(suggestions) && suggestions.length && !(suggestions.length === 1 && suggestions[0] === this.state.value) ? _react2.default.createElement(

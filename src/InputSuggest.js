@@ -79,7 +79,6 @@ class InputSuggest extends React.Component {
 				value={this.state.value}
 				onChange={this.onInput}
 				onFocus={this.onFocus}
-				onBlur={this.hideDropdown}
 			/>
 			{this.props.loading && this.props.loading()}
 			{Array.isArray(suggestions) && suggestions.length && !(suggestions.length === 1 && suggestions[0] === this.state.value)  ?

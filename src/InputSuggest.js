@@ -22,7 +22,7 @@ class InputSuggest extends React.Component {
 		this.onKeyPress = this.onKeyPress.bind(this)
 	}
 	componentWillReceiveProps(props) {
-		this.setState({suggestions: props.suggestions})
+		this.setState({suggestions: props.suggestions, value: props.value})
 	}
 	handleClickOutside(e) {
 		this.setState({dropdown: false})

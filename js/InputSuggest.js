@@ -125,11 +125,14 @@ var InputSuggest = function (_React$Component) {
 			switch (e.key) {
 				case 'Enter':
 					this.state.dropdown && e.preventDefault();
-					return this.setValue(this.state.selected, false);
+					this.setValue(this.state.selected, false);
+					break;
 				case 'ArrowDown':
-					return this.selectNextSuggestion(e);
+					this.selectNextSuggestion(e);
+					break;
 				case 'ArrowUp':
-					return this.selectPreviousSuggestion(e);
+					this.selectPreviousSuggestion(e);
+					break;
 			}
 			this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(this.state.value, e);
 		}

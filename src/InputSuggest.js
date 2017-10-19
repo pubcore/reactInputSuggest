@@ -62,9 +62,14 @@ class InputSuggest extends React.Component {
 		switch(e.key) {
 		case 'Enter':
 			this.state.dropdown && e.preventDefault()
-			return this.setValue(this.state.selected, false)
-		case 'ArrowDown': return this.selectNextSuggestion(e)
-		case 'ArrowUp': return this.selectPreviousSuggestion(e)
+			this.setValue(this.state.selected, false)
+			break
+		case 'ArrowDown':
+			this.selectNextSuggestion(e)
+			break
+		case 'ArrowUp':
+			this.selectPreviousSuggestion(e)
+			break
 		}
 		this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(this.state.value, e)
 	}

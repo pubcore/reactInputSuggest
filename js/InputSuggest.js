@@ -90,7 +90,7 @@ var InputSuggest = function (_React$Component) {
 	}, {
 		key: 'onFocus',
 		value: function onFocus(e) {
-			this.setState({ dropdown: true });
+			this.setState({ dropdown: true, selected: '' });
 			this.props.gofer.activate && this.props.gofer.activate(e);
 		}
 	}, {
@@ -122,7 +122,6 @@ var InputSuggest = function (_React$Component) {
 	}, {
 		key: 'onKeyPress',
 		value: function onKeyPress(e) {
-			this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(this.state.value, e);
 			switch (e.key) {
 				case 'Enter':
 					this.state.dropdown && e.preventDefault();
@@ -132,6 +131,7 @@ var InputSuggest = function (_React$Component) {
 				case 'ArrowUp':
 					return this.selectPreviousSuggestion(e);
 			}
+			this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(this.state.value, e);
 		}
 	}, {
 		key: 'render',

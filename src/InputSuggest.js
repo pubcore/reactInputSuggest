@@ -38,20 +38,23 @@ class InputSuggest extends React.Component {
 		this.setState({dropdown: true})
 		this.props.gofer.activate && this.props.gofer.activate(e)
 	}
-	selectSuggestion(newValue, e) {
+	useSuggestion(newValue) {
 		this.setState({selected: newValue})
+	}
+	selectSuggestion(newValue, e) {
+		this.useSuggestion(newValue)
 		this.props.gofer.selectSuggestion && this.props.gofer.selectSuggestion(newValue, e)
 	}
-	selectNextSuggestion(e) {
-		this.state.dropdown && this.selectSuggestion(this.state.suggestions[(this.state.suggestions.indexOf(this.state.selected)+1)] || '' ,e)
+	selectNextSuggestion() {
+		this.state.dropdown && this.useSuggestion(this.state.suggestions[(this.state.suggestions.indexOf(this.state.selected)+1)] || '')
 		this.setState({dropdown: true})
 	}
-	selectPreviousSuggestion(e) {
+	selectPreviousSuggestion() {
 		var key = this.state.suggestions.indexOf(this.state.selected)-1
 		if(key < 0) {
 			key = this.state.suggestions.length -1
 		}
-		this.state.dropdown && this.selectSuggestion(this.state.suggestions[key] || '' ,e)
+		this.state.dropdown && this.useSuggestion(this.state.suggestions[key] || '')
 	}
 	onKeyPress(e) {
 		this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(this.state.value, e)

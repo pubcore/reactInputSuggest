@@ -91,25 +91,30 @@ var InputSuggest = function (_React$Component) {
 			this.props.gofer.activate && this.props.gofer.activate(e);
 		}
 	}, {
+		key: 'useSuggestion',
+		value: function useSuggestion(newValue) {
+			this.setState({ selected: newValue });
+		}
+	}, {
 		key: 'selectSuggestion',
 		value: function selectSuggestion(newValue, e) {
-			this.setState({ selected: newValue });
+			this.useSuggestion(newValue);
 			this.props.gofer.selectSuggestion && this.props.gofer.selectSuggestion(newValue, e);
 		}
 	}, {
 		key: 'selectNextSuggestion',
-		value: function selectNextSuggestion(e) {
-			this.state.dropdown && this.selectSuggestion(this.state.suggestions[this.state.suggestions.indexOf(this.state.selected) + 1] || '', e);
+		value: function selectNextSuggestion() {
+			this.state.dropdown && this.useSuggestion(this.state.suggestions[this.state.suggestions.indexOf(this.state.selected) + 1] || '');
 			this.setState({ dropdown: true });
 		}
 	}, {
 		key: 'selectPreviousSuggestion',
-		value: function selectPreviousSuggestion(e) {
+		value: function selectPreviousSuggestion() {
 			var key = this.state.suggestions.indexOf(this.state.selected) - 1;
 			if (key < 0) {
 				key = this.state.suggestions.length - 1;
 			}
-			this.state.dropdown && this.selectSuggestion(this.state.suggestions[key] || '', e);
+			this.state.dropdown && this.useSuggestion(this.state.suggestions[key] || '');
 		}
 	}, {
 		key: 'onKeyPress',

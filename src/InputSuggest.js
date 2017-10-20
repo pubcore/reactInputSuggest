@@ -34,7 +34,7 @@ class InputSuggest extends React.Component {
 	}
 	setValue(newValue, dropdown) {
 		var suggestions = this.props.suggestions.filter(val => val.toLowerCase().indexOf(newValue.toLowerCase())>=0)
-		this.setState({value: newValue, dropdown, suggestions})
+		this.setState({value: newValue, dropdown, suggestions, selected: ''})
 		this.props.gofer.change && this.props.gofer.change(newValue)
 	}
 	onInput(e) {

@@ -83,7 +83,7 @@ var InputSuggest = function (_React$Component) {
 			var suggestions = this.props.suggestions.filter(function (val) {
 				return val.toLowerCase().indexOf(newValue.toLowerCase()) >= 0;
 			});
-			this.setState({ value: newValue, dropdown: dropdown, suggestions: suggestions });
+			this.setState({ value: newValue, dropdown: dropdown, suggestions: suggestions, selected: '' });
 			this.props.gofer.change && this.props.gofer.change(newValue);
 		}
 	}, {

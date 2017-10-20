@@ -138,7 +138,7 @@ var InputSuggest = function (_React$Component) {
 					this.selectPreviousSuggestion(e);
 					break;
 			}
-			this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(this.state.selected, e);
+			this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(e, this.state.selected);
 		}
 	}, {
 		key: 'render',

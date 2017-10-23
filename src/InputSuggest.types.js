@@ -1,4 +1,4 @@
-import {PropTypes as PT} from 'react'
+import {PropTypes as PT} from 'prop-types'
 
 export default {
 	key:PT.oneOfType([PT.string, PT.number]),

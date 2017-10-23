@@ -4,15 +4,15 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _react = require('react');
+var _propTypes = require('prop-types');
 
 exports.default = {
-	key: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]),
-	value: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number, _react.PropTypes.array]),
-	suggestions: _react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.object, _react.PropTypes.number])),
-	gofer: _react.PropTypes.object.isRequired,
-	classNames: _react.PropTypes.object.isRequired,
-	minsize: _react.PropTypes.number.isRequired,
-	loading: _react.PropTypes.func,
-	T: _react.PropTypes.oneOfType([_react.PropTypes.object, _react.PropTypes.array]).isRequired
+	key: _propTypes.PropTypes.oneOfType([_propTypes.PropTypes.string, _propTypes.PropTypes.number]),
+	value: _propTypes.PropTypes.oneOfType([_propTypes.PropTypes.string, _propTypes.PropTypes.number, _propTypes.PropTypes.array]),
+	suggestions: _propTypes.PropTypes.arrayOf(_propTypes.PropTypes.oneOfType([_propTypes.PropTypes.string, _propTypes.PropTypes.object, _propTypes.PropTypes.number])),
+	gofer: _propTypes.PropTypes.object.isRequired,
+	classNames: _propTypes.PropTypes.object.isRequired,
+	minsize: _propTypes.PropTypes.number.isRequired,
+	loading: _propTypes.PropTypes.func,
+	T: _propTypes.PropTypes.oneOfType([_propTypes.PropTypes.object, _propTypes.PropTypes.array]).isRequired
 };

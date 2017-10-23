@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/pubcore/reactInputSuggest#readme",
   "dependencies": {
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.0",
     "pubcore-ui-text": "^1.0.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

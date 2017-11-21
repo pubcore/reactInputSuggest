@@ -66,7 +66,7 @@ class InputSuggest extends React.Component {
 		switch(e.key) {
 		case 'Enter':
 			this.state.dropdown && e.preventDefault()
-			this.selectSuggestion(this.state.selected)
+			this.state.selected && this.selectSuggestion(this.state.selected)
 			break
 		case 'ArrowDown':
 			this.selectNextSuggestion(e)

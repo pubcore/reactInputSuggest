@@ -126,8 +126,6 @@ var InputSuggest = function (_React$Component) {
 	}, {
 		key: 'onKeyPress',
 		value: function onKeyPress(e) {
-			var triggerGofer = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-
 			switch (e.key) {
 				case 'Enter':
 					this.state.dropdown && e.preventDefault();
@@ -140,7 +138,7 @@ var InputSuggest = function (_React$Component) {
 					this.selectPreviousSuggestion(e);
 					break;
 			}
-			triggerGofer && this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(e, this.state.selected);
+			this.props.gofer.onKeyPress && this.props.gofer.onKeyPress(e, this.state.selected);
 		}
 	}, {
 		key: 'render',

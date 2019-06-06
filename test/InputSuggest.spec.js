@@ -3,7 +3,6 @@ import { mount } from 'enzyme'
 import chai from 'chai'
 import {PureInputSuggest as InputSuggest} from '../src/InputSuggest'
 
-
 describe('<InputAutocomplete/>', () => {
 	const inputProps = {
 		T: {},
@@ -11,7 +10,7 @@ describe('<InputAutocomplete/>', () => {
 		gofer: {}
 	}
 	const wrapper = mount(<InputSuggest {...inputProps} />);
-	
+
   it('renders without exploding', () => {
     expect(wrapper.find(InputSuggest)).to.have.length(1);
   });
@@ -33,5 +32,5 @@ describe('<InputAutocomplete/>', () => {
 		wrapper.find('.dropdown-value').at(1).simulate('click');
 		expect(wrapper.state('value')).to.equal('two')
   });
-	
+
 });
